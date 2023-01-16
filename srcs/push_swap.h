@@ -6,14 +6,25 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/07 23:31:36 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/16 23:53:31 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct s_info{
-    
-}t_info;
+//printf 使う用
+# include <stdio.h>
+//malloc
+#include <stdlib.h>
+
+typedef struct s_node{
+    int     data;
+    struct s_node  *next;
+}t_node;
+
+typedef struct s_list{
+    t_node  *list_top_node;
+}t_list;
+
 #endif
