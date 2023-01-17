@@ -13,6 +13,7 @@
 #include "push_swap.h"
 
 //単方向連結リストを作成
+/*
 t_node *init_node(int data)
 {
     t_node *node;
@@ -27,6 +28,7 @@ t_node *init_node(int data)
     node->next = NULL;
     return (node);
 }
+*/ß
 
 /*
 t_list *init_list(int data)
@@ -50,7 +52,7 @@ t_list *init_list(int data)
     return (list);
 }
 */
-
+/*
 t_list *init_list(int argc, char **argv)
 {
     t_list *list;
@@ -81,14 +83,41 @@ t_list *init_list(int argc, char **argv)
     }
     return (list);
 }
+*/
+
+/*
+ ①番兵ノードを作る
+ ②ノードを追加する
+ ③ノードをもう一個追加する
 
 
+*/
+
+ //双方向循環リストを用意する関数
+ t_stack *init_stack(char *argv[])
+ {
+     t_stack *stuck;
+     size_t i;
+
+     stuck = (t_stack *)malloc(sizeof(t_stack));
+     i = 0;
+     while(argv[i] != NULL)
+     {
+         
+     }
+
+     return (stuck);
+ }
 
 int main(int argc, char *argv[])
 {
-    t_list *list;
+    t_stack *stack_a;
 
-    list = init_list(argc, argv);
+
+    //引数チェック
+    //全部の引数を文字→数字にして数字を双方向循環リストに追加する
+    stack_a = init_stack(argv[]);
+    //stack_a を出力する
 
     return(0);
 }

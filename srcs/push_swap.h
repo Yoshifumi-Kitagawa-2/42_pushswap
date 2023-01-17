@@ -18,13 +18,16 @@
 //malloc
 #include <stdlib.h>
 
+//双方向循環連結リスト
+
 typedef struct s_node{
-    int     data;
+    struct s_node  *prev;
+    int             value;
     struct s_node  *next;
 }t_node;
 
-typedef struct s_list{
-    t_node  *list_top_node;
-}t_list;
+typedef struct s_stack{
+    
+}t_stack;
 
 #endif
