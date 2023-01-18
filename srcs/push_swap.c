@@ -72,7 +72,7 @@ void push_swap_sa(t_node **stack)
     *stack=next;
 }
 
-
+//ra
 void push_swap_ra(t_node **stack)
 {
     if(stack==NULL)
@@ -95,8 +95,6 @@ void push_swap_pa(t_node **head)
 }
 
 
-
-
 int main()
 {
     t_node *head;
@@ -110,5 +108,6 @@ int main()
         printf("%d\n", current_node->value);
         current_node=current_node->next;
     }while(current_node != head);
+
     return(0);
 }
