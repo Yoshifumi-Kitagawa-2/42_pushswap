@@ -12,112 +12,77 @@
 
 #include "push_swap.h"
 
-//単方向連結リストを作成
-/*
-t_node *init_node(int data)
+//nodeを作成する関数
+t_node *create_node(int value)
 {
-    t_node *node;
+    t_node *new_node;
 
-    node = (t_node *)malloc(sizeof(t_node));
-    if (node == NULL)
-    {
-        ft_printf("init_node malloc error\n");
-        return (NULL);
-    }
-    node->data = data;
-    node->next = NULL;
-    return (node);
+    new_node=(t_node *)malloc(sizeof(t_node));
+    new_node->value=value;
+    //printf("%d\n", new_node->value);
+    new_node->prev=NULL;
+    new_node->next=NULL;
+    return(new_node);
 }
-*/ß
-
-/*
-t_list *init_list(int data)
+//双方向循環リスト作成
+t_node *create_list(int data[],int n)
 {
-    t_list *list;
-    
-    list = NULL;
-    list = (t_list *)malloc(sizeof(t_list));
-    if (list == NULL)
-    {
-        printf("init_list malloc error\n");
-        return (NULL);
-    }
-    list->list_top_node = init_node(data);
-    if (list->list_top_node == NULL)
-    {
-        printf("init_node malloc error\n");
-        free(list);
-        return (NULL);
-    }
-    return (list);
-}
-*/
-/*
-t_list *init_list(int argc, char **argv)
-{
-    t_list *list;
-    size_t i;
-    int    array[argc - 1];
-    
-    list = NULL;
-    list = (t_list *)malloc(sizeof(t_list));
-    if (list == NULL)
-    {
-        printf("init_list malloc error\n");
-        return (NULL);
-    }
+    t_node *head;
+    t_node *tail;
+    int i;
 
-    i = 0;
-    while (argv[i + 1] != NULL)
+    i=1;
+    head=create_node(data[0]);
+    tail=head;
+    while(i < n)
     {
-        array[i] = ft_atoi(argv[i + 1]);
-        
+        t_node *new_node;
+        new_node=create_node(data[i]);
+        tail->next=new_node;
+        new_node->prev=tail;
+        tail=new_node;
         i++;
     }
-    list->list_top_node = init_node(data);
-    if (list->list_top_node == NULL)
-    {
-        printf("init_node malloc error\n");
-        free(list);
-        return (NULL);
-    }
-    return (list);
+    head->prev=tail;
+    tail->next=head;
+    return(head);
 }
-*/
 
-/*
- ①番兵ノードを作る
- ②ノードを追加する
- ③ノードをもう一個追加する
-
-
-*/
-
- //双方向循環リストを用意する関数
- t_stack *init_stack(char *argv[])
- {
-     t_stack *stuck;
-     size_t i;
-
-     stuck = (t_stack *)malloc(sizeof(t_stack));
-     i = 0;
-     while(argv[i] != NULL)
-     {
-         
-     }
-
-     return (stuck);
- }
-
-int main(int argc, char *argv[])
+//sa
+void push_swap_sa(t_node *node1, t_node *node2)
 {
-    t_stack *stack_a;
+    int temp;
+
+    temp = node1->value;
+    node1->value=node2->value;
+    node2->value=node1->value;
+}
+
+//ra
+void push_swap_ra(t_node **head)
+{
+    t_node *tail;
+    int     temp;
+    tail=(*head)->prev;
+    temp=tail->value;
+    tail->value=
+}
 
 
-    //引数チェック
-    //全部の引数を文字→数字にして数字を双方向循環リストに追加する
-    stack_a = init_stack(argv[]);
-    //stack_a を出力する
 
+
+int main()
+{
+    t_node *head;
+    t_node *current_node;
+
+    int data[]={1,2,3,4,5};
+
+    head=create_list(data, 5);
+    current_node=head;
+    do{
+        printf("%d\n", current_node->value);
+        current_node=current_node->next;
+    }while(current_node != head);
     return(0);
 }
