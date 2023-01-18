@@ -26,8 +26,4 @@ typedef struct s_node{
     struct s_node  *next;
 }t_node;
 
-typedef struct s_stack{
-    
-}t_stack;
-
 #endif
