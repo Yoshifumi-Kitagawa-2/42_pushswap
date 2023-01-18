@@ -49,13 +49,24 @@ t_node *create_list(int data[],int n)
 }
 
 //sa
-void push_swap_sa(t_node *node1, t_node *node2)
+void push_swap_sa(t_node **stack)
 {
-    int temp;
+    t_node *current;
+    t_node *next;
 
-    temp = node1->value;
-    node1->value=node2->value;
-    node2->value=node1->value;
+    if(stack = NULL)
+        return ;
+    if(*stack = NULL)
+        return ;
+    
+    current = *stack;
+    next = current->next;
+
+    next->prev = current->prev;
+    current->next=next->next;
+    
+    
+
 }
 
 //ra
