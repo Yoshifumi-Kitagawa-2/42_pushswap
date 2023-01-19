@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 18:04:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:52:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 //引数にhead->nextを渡すと
 //memo:12345→13245
 //先頭を入れるとバグる→スタック作る時に番兵ノード入れたら解決しそう
-void push_swap_sa(t_node **stack)
+void push_swap_sa(t_node **stack_head)
 {
     t_node *current;
     t_node *next;
 
-    if(stack == NULL)
+    if(stack_head == NULL)
         return ;
-    if(*stack == NULL)
+    if(*stack_head == NULL)
         return ;
-    current = *stack;
+    current = *stack_head;
     if (current->end == true)
         return ;
     next=current->next;
@@ -44,41 +44,53 @@ void push_swap_sa(t_node **stack)
         next->end = false;
         current->end = true;
     }
-    *stack=next;
+    *stack_head=next;
 }
 
 //以下ra
 //OK
-void push_swap_ra(t_node **stack)
+void push_swap_ra(t_node **stack_head)
 {
-    if(stack==NULL)
+    if(stack_head==NULL)
         return ;
-    if(*stack==NULL)
+    if(*stack_head==NULL)
         return ;
-    (*stack)->prev->end=false;
-    (*stack)->end=true;
-    *stack=(*stack)->next;
+    (*stack_head)->prev->end=false;
+    (*stack_head)->end=true;
+    *stack_head=(*stack_head)->next;
 }
 //rra
-void push_swap_rra(t_node **stack)
+void push_swap_rra(t_node **stack_head)
 {
-    if(stack==NULL)
+    if(stack_head==NULL)
         return ;
-    if(*stack==NULL)
+    if(*stack_head==NULL)
         return ;
-    (*stack)->prev->end=false;
-    (*stack)->prev->prev->end=true;
-    *stack=(*stack)->prev;
+    (*stack_head)->prev->end=false;
+    (*stack_head)->prev->prev->end=true;
+    *stack_head=(*stack_head)->prev;
 }
 
 //pa
-/*
-void push_swap_pa(t_node **head)
+t_node *push_swap_pop(t_node **stack_head)
 {
-    t_node *tail;
-    int     temp;
-    tail=(*head)->prev;
-    temp=tail->value;
-    tail->value=
+    t_node *prev;
+    t_node *next;
+    t_node *current;
+
+    if(stack_head==NULL)
+        return ;
+    if(*stack_head==NULL)
+        return ;
+    current = *stack_head;
+    prev=current->prev;
+    next=current->next;
+    prev->next=next;
+    next->prev=prev;
+    if (current->end=false)
+        *stack = next;
+    else 
+        *stack = NULL;
+    current->end = false;
+    return (current);
 }
-*/
