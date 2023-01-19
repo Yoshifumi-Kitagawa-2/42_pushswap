@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 19:09:44 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:52:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,26 @@ void ft_stack_last(t_node *stack)
 
 void ft_stack_add_front(t_node **stack, t_node *new)
 {
-    t_node *current;
-
-    current = *stack;
-    if(new == NULL)
+    t_node *head;
+    t_node *tail;
+    
+    if(new == NULL || stack == NULL)
         return ;
-    if(current != NULL)
+    if (*stack == NULL)
     {
-        new->next=current->prev->next;
-        new->prev=current->prev;
-        current->prev->next=new
+        *stack=new;
+        new->prev=new;
+        new->next=new;
+        new->end=true;
+        return ;
     }
+    /*
+    head = *stack;
+    tail = head->prev;
+    new->prev = tail;
+    new->next = head;
+    tail->next=new;
+    head->prev=new;
+    *stack=new;
+    */
 }

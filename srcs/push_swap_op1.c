@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 18:52:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:38:11 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void push_swap_sa(t_node **stack_head)
     if (current->end == true)
         return ;
     next=current->next;
-    if(ft_stack_size(*stack) > 2)
+    if(ft_stack_size(*stack_head) > 2)
     {
         next->prev=current->prev;
         current->next=next->next;
@@ -79,18 +79,28 @@ t_node *push_swap_pop(t_node **stack_head)
     t_node *current;
 
     if(stack_head==NULL)
-        return ;
+        return(NULL);
     if(*stack_head==NULL)
-        return ;
+        return(NULL);
     current = *stack_head;
     prev=current->prev;
     next=current->next;
     prev->next=next;
     next->prev=prev;
-    if (current->end=false)
-        *stack = next;
+    if (current->end==false)
+        *stack_head = next;
     else 
-        *stack = NULL;
+        *stack_head = NULL;
     current->end = false;
     return (current);
+}
+
+void push_swap_pb(t_data *data)
+{
+    t_node *top;
+
+    top = push_swap_pop(&(data->stack_a));
+    if (top == NULL)
+        return ;
+    ft_stack_add_front(&(data->stack_b), top);
 }
