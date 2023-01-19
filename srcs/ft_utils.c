@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 21:25:24 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:35:47 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ft_stack_add_front(t_node **stack, t_node *new)
     
     if(new == NULL || stack == NULL)
         return ;
-    if (*stack == NULL)
+    if ((*stack)->next == *stack)
     {
         *stack=new;
         new->prev=new;
@@ -63,7 +63,6 @@ void ft_stack_add_front(t_node **stack, t_node *new)
         new->end=true;
         return ;
     }
-    /*
     head = *stack;
     tail = head->prev;
     new->prev = tail;
@@ -71,5 +70,4 @@ void ft_stack_add_front(t_node **stack, t_node *new)
     tail->next=new;
     head->prev=new;
     *stack=new;
-    */
 }

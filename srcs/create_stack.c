@@ -3,16 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 17:39:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:35:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //nodeを作成する関数
+t_node *create_stack_b()
+{
+    t_node *new_node;
+
+    new_node=(t_node *)malloc(sizeof(t_node));
+    new_node->prev=new_node;
+    new_node->next=new_node;
+    return(new_node);
+}
+
 t_node *create_node(int value)
 {
     t_node *new_node;

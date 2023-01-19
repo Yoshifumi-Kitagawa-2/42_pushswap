@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:28:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 21:32:32 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:37:03 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
 
     data=(t_data *)malloc(sizeof(t_data));
     data->stack_a=create_stack(array, 5);
-    
+    data->stack_b=create_stack_b();
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
     printf("stack size:%d\n", (int)data->stack_len);
@@ -87,8 +87,7 @@ int main()
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     printf("[result of stack_b]\n");
-    //printf("value:%d/", data->stack_b->value);
-    printf("%p\n", &(data->stack_b));
-    //printf("end:%d\n", data->stack_b->end);
+    printf("value:%d/", data->stack_b->value);
+    printf("end:%d\n", data->stack_b->end);
     return(0);
 }
