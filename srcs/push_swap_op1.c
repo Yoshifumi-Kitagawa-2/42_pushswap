@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:11 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 15:06:45 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:04:21 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@
 //OK
 //引数にhead->nextを渡すと
 //memo:12345→13245
-
-void test_push_swap_sa(t_node *stack)
+//先頭を入れるとバグる→スタック作る時に番兵ノード入れたら解決しそう
+void push_swap_sa(t_node **stack)
 {
     t_node *current;
     t_node *next;
 
     if(stack == NULL)
         return ;
-    current = stack;
+    if(*stack == NULL)
+        return ;
+    current = *stack;
+    if (current->end == true)
+        return ;
     next=current->next;
-    if(ft_stack_size(stack) > 2)
+    if(ft_stack_size(*stack) > 2)
     {
         next->prev=current->prev;
         current->next=next->next;
@@ -35,11 +39,16 @@ void test_push_swap_sa(t_node *stack)
     }
     current->prev=next;
     next->next=current;
-    stack=next;
+    if (next->end == true)
+    {
+        next->end = false;
+        current->end = true;
+    }
+    *stack=next;
 }
 
 //以下ra
-/*
+//OK
 void push_swap_ra(t_node **stack)
 {
     if(stack==NULL)
@@ -48,9 +57,19 @@ void push_swap_ra(t_node **stack)
         return ;
     (*stack)->prev->end=false;
     (*stack)->end=true;
-    (*stack)=(*stack)->next;
+    *stack=(*stack)->next;
 }
-*/
+//rra
+void push_swap_rra(t_node **stack)
+{
+    if(stack==NULL)
+        return ;
+    if(*stack==NULL)
+        return ;
+    (*stack)->prev->end=false;
+    (*stack)->prev->prev->end=true;
+    *stack=(*stack)->prev;
+}
 
 //pa
 /*

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 15:05:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:00:00 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,11 @@ typedef struct s_data{
 }t_data;
 
 t_node *create_node(int value);
-t_node *create_list(int data[],int n);
+t_node *create_stack(int data[],int n);
 size_t ft_stack_size(t_node *stack);
-void    test_push_swap_sa(t_node *stack);
+void   ft_stack_last(t_node *stack);
+void   push_swap_sa(t_node **stack);
+void   push_swap_ra(t_node **stack);
+void   push_swap_rra(t_node **stack);
 
 #endif
