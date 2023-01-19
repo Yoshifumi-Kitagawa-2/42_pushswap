@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/16 23:53:31 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:05:02 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,29 @@
 //malloc
 #include <stdlib.h>
 
+#include <stdbool.h>
+
 //双方向循環連結リスト
 
 typedef struct s_node{
     struct s_node  *prev;
     int             value;
     struct s_node  *next;
+    bool           end;
+      
 }t_node;
+
+typedef struct s_data{
+    t_node *stack_a;
+    t_node *stack_b;
+
+    
+    size_t stack_len;
+}t_data;
+
+t_node *create_node(int value);
+t_node *create_list(int data[],int n);
+size_t ft_stack_size(t_node *stack);
+void    test_push_swap_sa(t_node *stack);
 
 #endif
