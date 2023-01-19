@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:28:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 20:35:48 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/19 20:58:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,3 @@ int main()
     printf("end:%d\n", data->stack_b->end);
     return(0);
 }
-
