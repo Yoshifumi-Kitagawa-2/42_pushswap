@@ -6,12 +6,12 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:43:51 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:49:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//Ok
+
 size_t ft_stack_size(t_node *stack)
 {
     size_t size;
@@ -28,7 +28,7 @@ size_t ft_stack_size(t_node *stack)
     }
     return(size);
 }
-//OK
+
 void ft_stack_last(t_node *stack)
 {
     t_node *head;
