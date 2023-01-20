@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 21:35:47 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:36:59 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void ft_stack_add_front(t_node **stack, t_node *new)
     tail->next=new;
     head->prev=new;
     *stack=new;
+    
 }
