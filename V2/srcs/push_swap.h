@@ -6,13 +6,15 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 18:38:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:04:06 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+//libraryを使う用
+# include "../library/libft.h"
 //printf 使う用
 # include <stdio.h>
 //malloc
@@ -35,7 +37,9 @@ typedef struct s_data{
     size_t stack_len;
 }t_data;
 
-t_node  *create_stack_b();
+int     *set_array(int argc, char *argv[]); 
+
+void    init_data(t_data *data, int *array);
 t_node  *create_node(int value);
 t_node  *create_stack(int data[],int n);
 

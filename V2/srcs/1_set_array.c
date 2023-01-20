@@ -6,15 +6,28 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 20:42:56 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:59:46 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int *set_array(int argc, char *argv[])
 {
     int *array;
+    size_t  i;
     
-    array = (int *)ft_
-    
+    array = (int *)ft_calloc(argc, sizeof(int));
+    if (array == NULL)//既にmallocしたもの解放する処理必要だろうけどまだ何もしてない
+    {
+        ft_printf("MALLOC ERROR AT SET ARRAY\n");
+        return (NULL);
+    }
+    i = 0;
+    while (i < argc - 1)
+    {
+        array[i] =  ft_atoi(argv[i + 1]);
+        i++;
+    }
     return (array);
 }

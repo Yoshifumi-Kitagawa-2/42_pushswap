@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 20:34:10 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:59:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 void init_data(t_data *data, int *array)
 {
     data=(t_data *)malloc(sizeof(t_data));
-    if (data == NULL)
+    if (data == NULL)//既にmallocしたもの解放する処理必要だろうけどまだ何もしてない
+    {
+        ft_printf("MALLOC ERROR AT INIT DATA\n");
         return ;
+    }
     data->stack_a=create_stack(array, 5);
     data->stack_b=NULL;
     data->stack_len=ft_stack_size(data->stack_a);
