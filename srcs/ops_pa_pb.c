@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:40:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:41:45 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:48:44 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ t_node *pop(t_node **stack_head)
     current->end = false;
     return (current);
 }
-
-
 
 void operation_pa(t_data *data)
 {
