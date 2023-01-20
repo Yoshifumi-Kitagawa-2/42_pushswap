@@ -6,11 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:50:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:54:14 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:16:22 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//test① sa
+#include "push_swap.h"
+//test① sa：OK
+/*
 int main()
 {
     t_data *data;
@@ -20,17 +22,12 @@ int main()
 
     data=(t_data *)malloc(sizeof(t_data));
     data->stack_a=create_stack(array, 5);
-    data->stack_b=create_stack_b();
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
     
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
-    printf("<implement pb>\n");
+    printf("<implement sa>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
     do{
@@ -38,13 +35,7 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    operation_sa(data);
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -53,13 +44,11 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("value:%d/", data->stack_b->value);
-    printf("end:%d\n", data->stack_b->end);
     return(0);
 }
-
-//test② ra
+*/
+/*
+//test② ra：OK
 int main()
 {
     t_data *data;
@@ -69,17 +58,11 @@ int main()
 
     data=(t_data *)malloc(sizeof(t_data));
     data->stack_a=create_stack(array, 5);
-    data->stack_b=create_stack_b();
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
-    
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
-    printf("<implement pb>\n");
+    printf("<implement ra>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
     do{
@@ -87,13 +70,7 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    operation_ra(data);
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -102,13 +79,12 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("value:%d/", data->stack_b->value);
-    printf("end:%d\n", data->stack_b->end);
     return(0);
 }
+*/
 
-//test③ rra
+//test③ rra：OK
+/*
 int main()
 {
     t_data *data;
@@ -118,17 +94,11 @@ int main()
 
     data=(t_data *)malloc(sizeof(t_data));
     data->stack_a=create_stack(array, 5);
-    data->stack_b=create_stack_b();
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
-    
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
-    printf("<implement pb>\n");
+    printf("<implement rra>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
     do{
@@ -136,13 +106,7 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    operation_rra(data);
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -151,11 +115,9 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    printf("[result of stack_b]\n");
-    printf("value:%d/", data->stack_b->value);
-    printf("end:%d\n", data->stack_b->end);
     return(0);
 }
+*/
 
 //test④ pb
 int main()
@@ -173,10 +135,6 @@ int main()
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
     
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
     printf("<implement pb>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
@@ -187,11 +145,7 @@ int main()
     }while(current_node != data->stack_a);
     printf("[result of stack_b]\n");
     printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    operation_pb(data);
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -205,7 +159,7 @@ int main()
     printf("end:%d\n", data->stack_b->end);
     return(0);
 }
-
+/*
 //test⑤ pb→pa
 int main()
 {
@@ -401,3 +355,4 @@ int main()
     printf("end:%d\n", data->stack_b->end);
     return(0);
 }
+*/

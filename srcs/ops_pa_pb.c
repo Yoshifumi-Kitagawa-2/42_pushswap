@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:40:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:48:44 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:04:38 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void operation_pa(t_data *data)
 {
     t_node *top;
 
-    top = push_swap_pop(&(data->stack_b));
+    top = pop(&(data->stack_b));
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_a), top);
@@ -49,7 +49,7 @@ void operation_pb(t_data *data)
 {
     t_node *top;
 
-    top = push_swap_pop(&(data->stack_a));
+    top = pop(&(data->stack_a));
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_b), top);
