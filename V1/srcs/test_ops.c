@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:50:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:16:22 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:46:46 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,8 @@ int main()
 }
 */
 
-//test④ pb
+//test④ pb：OK
+/*
 int main()
 {
     t_data *data;
@@ -159,7 +160,8 @@ int main()
     printf("end:%d\n", data->stack_b->end);
     return(0);
 }
-/*
+*/
+
 //test⑤ pb→pa
 int main()
 {
@@ -176,10 +178,6 @@ int main()
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
     
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
     printf("<implement pb>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
@@ -189,12 +187,11 @@ int main()
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     printf("[result of stack_b]\n");
-    printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    printf("p\n", data->stack_b);
+    
+    operation_pb(data);
+    operation_pa(data);
+    
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -204,11 +201,11 @@ int main()
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     printf("[result of stack_b]\n");
-    printf("value:%d/", data->stack_b->value);
-    printf("end:%d\n", data->stack_b->end);
+    printf("%d\n", data->stack_b->value);
     return(0);
 }
 
+/*
 //test⑥ pb→pb→sb
 int main()
 {

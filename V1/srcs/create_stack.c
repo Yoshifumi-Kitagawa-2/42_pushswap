@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/19 21:35:07 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:38:43 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_node *create_stack_b()
     new_node=(t_node *)malloc(sizeof(t_node));
     new_node->prev=new_node;
     new_node->next=new_node;
+    new_node->end=true;
     return(new_node);
 }
 
