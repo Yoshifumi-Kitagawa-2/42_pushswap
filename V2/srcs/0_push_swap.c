@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 21:01:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:37:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,12 @@ int main(int argc, char *argv[])
 {
     t_data *data;
     int    *array;
-
-    t_node *current_node;
     
     array = set_array(argc, argv);
-    init_data(data, array);
+    data = init_data(array);
     
+    t_node *current_node;
     current_node=data->stack_a;
-    
-    printf("<implement sa>\n");
-    printf("---before swap---\n");
-    printf("[result of stack_a]\n");
     do{
         printf("value:%d/", current_node->value);
         printf("end:%d\n", current_node->end);

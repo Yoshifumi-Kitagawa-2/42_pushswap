@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 21:04:06 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:49:21 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 //libraryを使う用
-# include "../library/libft.h"
+# include "../lib/libft.h"
 //printf 使う用
 # include <stdio.h>
 //malloc
@@ -39,9 +39,9 @@ typedef struct s_data{
 
 int     *set_array(int argc, char *argv[]); 
 
-void    init_data(t_data *data, int *array);
+t_data  *init_data(int *array);
 t_node  *create_node(int value);
-t_node  *create_stack(int data[],int n);
+t_node  *create_stack(int array[]);
 
 size_t  ft_stack_size(t_node *stack);
 void    ft_stack_last(t_node *stack);
