@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:50:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:46:46 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:23:01 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,9 +204,8 @@ int main()
     printf("%d\n", data->stack_b->value);
     return(0);
 }
-
 /*
-//test⑥ pb→pb→sb
+//test⑥ pb→pb
 int main()
 {
     t_data *data;
@@ -222,11 +221,7 @@ int main()
     printf("stack size:%d\n", (int)data->stack_len);
     current_node=data->stack_a;
     
-    //printf("<implement sa>\n");
-    //printf("<implement ra>\n");
-    //printf("<implement rra>\n");
-    
-    printf("<implement pb>\n");
+    printf("<implement pb→pb→pa>\n");
     printf("---before swap---\n");
     printf("[result of stack_a]\n");
     do{
@@ -236,11 +231,10 @@ int main()
     }while(current_node != data->stack_a);
     printf("[result of stack_b]\n");
     printf("%p\n", &(data->stack_b));
-    //push_swap_sa(&data->stack_a);
-    //push_swap_sa(&data->stack_a->next);
-    //push_swap_ra(&data->stack_a);
-    //push_swap_rra(&data->stack_a);
-    push_swap_pb(data);
+    
+    operation_pb(data);
+    operation_pb(data);
+    
     printf("---after swap---\n");
     printf("[result of stack_a]\n");
     current_node=data->stack_a;
@@ -249,12 +243,18 @@ int main()
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
+    
     printf("[result of stack_b]\n");
-    printf("value:%d/", data->stack_b->value);
-    printf("end:%d\n", data->stack_b->end);
+    current_node=data->stack_b->prev;
+    do{
+        printf("value:%d/", current_node->value);
+        printf("end:%d\n", current_node->end);
+        current_node=current_node->next;
+    }while(current_node != data->stack_b);
     return(0);
 }
 
+/*
 //test⑦：pb→pb→pb→rb
 int main()
 {

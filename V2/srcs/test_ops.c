@@ -6,11 +6,13 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:50:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:46:46 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:01:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int 
 //test① sa：OK
 /*
 int main()

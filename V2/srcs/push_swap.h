@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:48:10 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:19:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,15 @@
 
 typedef struct s_node{
     struct s_node  *prev;
-    int             value;
+    int            value;
     struct s_node  *next;
     bool           end;
-      
 }t_node;
 
 typedef struct s_data{
     t_node *stack_a;
     t_node *stack_b;
 
-    
     size_t stack_len;
 }t_data;
 

@@ -6,13 +6,21 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:38:43 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:51:17 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //nodeを作成する関数
+
+
+
+
+
+
+
+//以下：V1関数
 t_node *create_stack_b()
 {
     t_node *new_node;
