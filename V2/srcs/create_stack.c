@@ -6,31 +6,26 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 17:51:17 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:44:57 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//nodeを作成する関数
-
-
-
-
-
-
-
-//以下：V1関数
+/*
 t_node *create_stack_b()
 {
     t_node *new_node;
 
     new_node=(t_node *)malloc(sizeof(t_node));
+    if (new_node = NULL)
+        exit(EXIT_FAILURE);
     new_node->prev=new_node;
     new_node->next=new_node;
     new_node->end=true;
     return(new_node);
 }
+*/
 
 t_node *create_node(int value)
 {

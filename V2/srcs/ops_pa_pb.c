@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:40:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:49:39 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:40:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ t_node *pop(t_node **stack_head)
     if (current->end==false)
         *stack_head = next;
     else
-    {
-        
-    }
+        *stack_head = NULL;
     current->end = false;
     return (current);
 }

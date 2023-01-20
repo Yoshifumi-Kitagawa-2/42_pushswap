@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 14:34:04 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:41:14 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ft_stack_add_front(t_node **stack, t_node *new)
     
     if(new == NULL || stack == NULL)
         return ;
-    if ((*stack)->next == *stack)
+    if (*stack == NULL)
     {
         *stack=new;
         new->prev=new;
