@@ -6,20 +6,34 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 21:37:54 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 22:15:09 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//malloc or callocしたものメモ(後でfreeしないといけない)
+//
+//
 int main(int argc, char *argv[])
 {
     t_data *data;
     int    *array;
     
+    if (argc - 1 <= 0)
+        return (0);
+    
     array = set_array(argc, argv);
     data = init_data(array);
+    free(array);
     
+    if (data->stack_len < 4)
+        sort_3_or_less(data);
+    else if (4 <= data->stack_len && data->stack_len <= 6)
+        sort_between_4_and_6(data);
+    else
+        sort_7_or_mora(data);
+    /*
     t_node *current_node;
     current_node=data->stack_a;
     do{
@@ -27,6 +41,8 @@ int main(int argc, char *argv[])
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
+    */
+    //free_data(data);
     return (0);
 }
 
