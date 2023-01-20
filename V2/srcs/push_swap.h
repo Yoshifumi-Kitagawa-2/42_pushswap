@@ -6,9 +6,11 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 22:13:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 22:17:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//gcc -fsanitize=address -g srcs/*.c lib/*.c
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
