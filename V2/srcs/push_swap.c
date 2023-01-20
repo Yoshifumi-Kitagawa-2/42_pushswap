@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 19:04:59 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:09:03 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int main(int argc, char *argv[])
 {
     t_data *data;
 
-    data=(t_data *)malloc(sizeof(t_data));
-
+    init_data(data);
+    
+    
+    
     return (0);
 }
 
