@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 21:45:08 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:43:50 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void ft_stack_last(t_node *stack)
         return ;
     head=stack;
     current=stack->next;
-    while(current->next != head)
+    while(current != head)
     {
-        if (current->next == head->prev)
-            current->next->end = true;
+        if (current == head->prev)
+            current->end = true;
         else
             current->end = false;
         current = current->next;

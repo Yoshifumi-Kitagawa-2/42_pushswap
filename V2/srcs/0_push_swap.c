@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   0_push_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 22:15:09 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:46:37 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,28 @@ int main(int argc, char *argv[])
     array = set_array(argc, argv);
     data = init_data(array);
     free(array);
+
+    t_node *current_node;
     
+    current_node=data->stack_a;
+    do{
+        printf("value:%d/", current_node->value);
+        printf("end:%d\n", current_node->end);
+        current_node=current_node->next;
+    }while(current_node != data->stack_a);
+    
+    if (confirm_sorted(data) == true)
+        return (0);
     if (data->stack_len < 4)
         sort_3_or_less(data);
+    /*
     else if (4 <= data->stack_len && data->stack_len <= 6)
         sort_between_4_and_6(data);
     else
         sort_7_or_mora(data);
+    */
+    //t_node *current_node;
     /*
-    t_node *current_node;
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
