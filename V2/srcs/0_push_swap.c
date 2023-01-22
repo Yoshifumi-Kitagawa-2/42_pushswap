@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   0_push_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/21 18:46:37 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 14:23:52 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //malloc or callocしたものメモ(後でfreeしないといけない)
-//
 //
 int main(int argc, char *argv[])
 {
@@ -27,7 +26,10 @@ int main(int argc, char *argv[])
     data = init_data(array);
     free(array);
 
+    
     t_node *current_node;
+    
+    printf("---before swap---\n");
     
     current_node=data->stack_a;
     do{
@@ -36,10 +38,11 @@ int main(int argc, char *argv[])
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     
-    if (confirm_sorted(data) == true)
+    if (confirm_sorted(data) == false)
         return (0);
     if (data->stack_len < 4)
         sort_3_or_less(data);
+    
     /*
     else if (4 <= data->stack_len && data->stack_len <= 6)
         sort_between_4_and_6(data);
@@ -47,14 +50,16 @@ int main(int argc, char *argv[])
         sort_7_or_mora(data);
     */
     //t_node *current_node;
-    /*
+    
+    printf("---after swap---\n");
+    
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
         printf("end:%d\n", current_node->end);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    */
+    
     //free_data(data);
     return (0);
 }
