@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 16:26:35 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:59:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     data = init_data(array);
     free(array);
 
-    
+
     t_node *current_node;
     
     printf("---before swap---\n");
