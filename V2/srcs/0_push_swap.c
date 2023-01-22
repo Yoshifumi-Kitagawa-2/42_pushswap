@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 15:36:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:26:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int main(int argc, char *argv[])
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
-        printf("end:%d\n", current_node->end);
+        printf("end:%d/", current_node->end);
+        printf("index:%zu\n", current_node->index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     
@@ -55,7 +56,8 @@ int main(int argc, char *argv[])
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
-        printf("end:%d\n", current_node->end);
+        printf("end:%d/", current_node->end);
+        printf("index:%zu\n", current_node->index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     

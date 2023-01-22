@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 14:25:14 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:49:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_node{
     int            value;
     struct s_node  *next;
     bool           end;
+    size_t         index; //座標圧縮用//最初は引数順。大きさに合わせて入れ替える。
 }t_node;
 
 typedef struct s_data{
@@ -42,8 +43,9 @@ typedef struct s_data{
 int     *set_array(int argc, char *argv[]); 
 
 t_data  *init_data(int *array);
-t_node  *create_node(int value);
+t_node  *create_node(int value, size_t index);
 t_node  *create_stack(int array[]);
+void    swap_index(t_data *data);
 
 size_t  ft_stack_size(t_node *stack);
 void    ft_stack_last(t_node *stack);

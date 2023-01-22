@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 21:48:58 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:54:09 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ t_data *init_data(int array[])
     data->stack_b=NULL;
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
+    swap_index(data);
     return (data);
 }
 
-t_node *create_node(int value)
+t_node *create_node(int value, size_t index)
 {
     t_node *new_node;
 
@@ -37,6 +38,7 @@ t_node *create_node(int value)
     new_node->value=value;
     new_node->prev=NULL;
     new_node->next=NULL;
+    new_node->index=index;
     return(new_node);
 }
 //双方向循環リスト作成
@@ -48,12 +50,12 @@ t_node *create_stack(int array[])
     int i;
 
     i=1;
-    head=create_node(array[0]);
+    head=create_node(array[0], 0);
     tail=head;
     while(array[i] != '\0')
     {
         t_node *new_node;
-        new_node=create_node(array[i]);
+        new_node=create_node(array[i], i);
         tail->next=new_node;
         new_node->prev=tail;
         tail=new_node;
@@ -62,4 +64,30 @@ t_node *create_stack(int array[])
     head->prev=tail;
     tail->next=head;
     return(head);
+}
+
+void swap_index(t_data *data)
+{
+    size_t  i;
+    size_t  tmp;
+    t_node *current;
+    t_node *compare;
+
+    current = data->stack_a;
+    compare = current->next;
+    while (current->end != true)
+    {
+        compare = current->next;
+        while (compare->prev->end != true)
+        {
+            if (current->value > compare->value)
+            {
+                tmp = current->index;
+                current->index = compare->index;
+                compare->index = tmp;
+            }
+            compare = compare->next;
+        }
+        current = current->next;
+    }
 }
