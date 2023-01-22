@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:39:27 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 13:41:54 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:34:10 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ void rra_or_rrb(t_node **stack_head)
 void operation_rra(t_data *data)
 {
     rra_or_rrb(&(data->stack_a));
+    ft_printf("RRA\n");
 }
 
 void operation_rrb(t_data *data)
 {
     rra_or_rrb(&(data->stack_b));
+    ft_printf("RRB\n");
 }
 

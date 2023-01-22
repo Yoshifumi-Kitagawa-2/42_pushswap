@@ -6,19 +6,19 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 22:08:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 14:25:53 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 18:30:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool confirm_sorted(t_data *data)
+bool confirm_sorted(t_node **stack)
 {
     bool check;
     t_node *current_node;
 
     check = true;
-    current_node = data->stack_a;
+    current_node = *stack;
     while (current_node->end != true)
     {
         if (current_node->value > current_node->next->value)
