@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 22:08:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/20 22:13:37 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 14:25:53 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool confirm_sorted(t_data *data)
     current_node = data->stack_a;
     while (current_node->end != true)
     {
-        if (current_node->value < current_node->next->value)
+        if (current_node->value > current_node->next->value)
         {
             check = false;
             break;

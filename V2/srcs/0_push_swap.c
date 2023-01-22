@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 14:23:52 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:36:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ int main(int argc, char *argv[])
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     
-    if (confirm_sorted(data) == false)
+    if (confirm_sorted(data) == true)
         return (0);
     if (data->stack_len < 4)
         sort_3_or_less(data);
-    
     /*
     else if (4 <= data->stack_len && data->stack_len <= 6)
         sort_between_4_and_6(data);
