@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 22:06:20 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:44:22 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:48:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void sort_4(t_data *data)
     head = data->stack_a;
     min_sorted_index = find_min_sorted_index(&head);
     min_pos = find_min_pos(&head, min_sorted_index);
-    printf("%zu\n", min_sorted_index);
-    printf("%zu\n", min_pos);
+    //printf("%zu\n", min_sorted_index);
+    //printf("%zu\n", min_pos);
     while (head->sorted_index != min_sorted_index)
     {
         if (min_pos < data->stack_len / 2)
@@ -88,8 +88,8 @@ void sort_5(t_data *data)
     head = data->stack_a;
     min_sorted_index = find_min_sorted_index(&head);
     min_pos = find_min_pos(&head, min_sorted_index);
-    printf("%zu\n", min_sorted_index);
-    printf("%zu\n", min_pos);
+    //printf("%zu\n", min_sorted_index);
+    //printf("%zu\n", min_pos);
     while (head->sorted_index != min_sorted_index)
     {
         if (min_pos < data->stack_len / 2)
@@ -101,5 +101,30 @@ void sort_5(t_data *data)
     operation_pb(data);
     if (confirm_sorted(&(data->stack_a)) == false)
         sort_4(data);
+    operation_pa(data);
+}
+
+void sort_6(t_data *data)
+{
+    size_t min_sorted_index;
+    size_t min_pos;
+    t_node *head;
+    
+    head = data->stack_a;
+    min_sorted_index = find_min_sorted_index(&head);
+    min_pos = find_min_pos(&head, min_sorted_index);
+    //printf("%zu\n", min_sorted_index);
+    //printf("%zu\n", min_pos);
+    while (head->sorted_index != min_sorted_index)
+    {
+        if (min_pos < data->stack_len / 2)
+            operation_ra(data);
+        else
+            operation_rra(data);
+        head = data->stack_a;
+    }
+    operation_pb(data);
+    if (confirm_sorted(&(data->stack_a)) == false)
+        sort_5(data);
     operation_pa(data);
 }

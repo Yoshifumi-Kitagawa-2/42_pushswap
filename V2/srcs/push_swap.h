@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 15:59:59 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:48:50 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ bool    confirm_sorted(t_node **stack);
 void    sort_3_or_less(t_data *data, t_node *stack);
 void    sort_4(t_data *data);
 void    sort_5(t_data *data);
+void    sort_6(t_data *data);
 
 void    free_data(t_data *data);
 
