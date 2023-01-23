@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 18:32:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:00:11 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
     
     array = set_array(argc, argv);
     data = init_data(array);
+
     free(array);
-
-
+    
     t_node *current_node;
     
     printf("---before swap---\n");
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     do{
         printf("value:%d/", current_node->value);
         printf("end:%d/", current_node->end);
-        printf("index:%zu\n", current_node->index);
+        printf("index:%zu\n", current_node->sorted_index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     
@@ -43,26 +43,20 @@ int main(int argc, char *argv[])
         return (0);
     if (data->stack_len < 4)
         sort_3_or_less(data, data->stack_a);
-    
     else if (data->stack_len == 4)
         sort_4(data);
     else if (data->stack_len == 5)
         sort_5(data);
-    /*
-    else
-        sort_7_or_mora(data);
-    */
-    
     printf("---after swap---\n");
     
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
         printf("end:%d/", current_node->end);
-        printf("index:%zu\n", current_node->index);
+        printf("index:%zu\n", current_node->sorted_index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    
+    printf("%zu\n", data->count);
     //free_data(data);
     return (0);
 }

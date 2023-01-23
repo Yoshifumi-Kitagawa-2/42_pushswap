@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 16:54:09 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:54:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ t_data *init_data(int array[])
     }
     data->stack_a=create_stack(array);
     data->stack_b=NULL;
+    data->sorted_array = sort_array(array);
+    data->count = 0;
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
-    swap_index(data);
+    set_sorted_index(data);
     return (data);
 }
 
@@ -38,7 +40,7 @@ t_node *create_node(int value, size_t index)
     new_node->value=value;
     new_node->prev=NULL;
     new_node->next=NULL;
-    new_node->index=index;
+    new_node->sorted_index=index;
     return(new_node);
 }
 //双方向循環リスト作成
@@ -66,28 +68,60 @@ t_node *create_stack(int array[])
     return(head);
 }
 
-void swap_index(t_data *data)
+int *sort_array(int array[])
 {
     size_t  i;
-    size_t  tmp;
-    t_node *current;
-    t_node *compare;
+    size_t  j;
+    int     tmp;
 
-    current = data->stack_a;
-    compare = current->next;
-    while (current->end != true)
+    i = 0;
+    while (array[i] != '\0')
     {
-        compare = current->next;
-        while (compare->prev->end != true)
+        j = i + 1;
+        while (array[j] != '\0')
         {
-            if (current->value > compare->value)
+            if (array[i] > array[j])
             {
-                tmp = current->index;
-                current->index = compare->index;
-                compare->index = tmp;
+                tmp = array[i];
+                array[i] = array[j];
+                array[j] = tmp;
             }
-            compare = compare->next;
+            j++;
         }
-        current = current->next;
+        i++;
+    }
+    return (array);
+}
+
+void set_sorted_index(t_data *data)
+{
+    size_t  index;
+    t_node  *current;
+    
+    index = 0;
+    current = data->stack_a;
+    while (current->end == false)
+    {
+        index = 0;
+        while (data->sorted_array[index] != '\0')
+        {
+            if (current->value == data->sorted_array[index])
+            {
+                current->sorted_index = index;
+                break;
+            }
+            index++;
+        }
+        current = current->next;   
+    }
+    index = 0;
+    while (data->sorted_array[index] != '\0')
+    {
+        if (current->value == data->sorted_array[index])
+        {
+            current->sorted_index = index;
+            break;
+        }
+        index++;
     }
 }

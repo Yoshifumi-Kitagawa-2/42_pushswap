@@ -6,14 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 22:06:20 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 18:28:11 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:07:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-・3個の場合
+・3個の場合：max2手
 1 2 3 →何もしない(cofirmed sortedで弾かれる)
 2 3 1 →rra：1 2 3
 1 3 2 →rra：2 1 3→sa：1 2 3
@@ -22,6 +22,7 @@
 3 1 2 →ra：1 2 3
 3 2 1 →ra：2 1 3→sa：1 2 3
 */
+
 //OK
 void sort_3_or_less(t_data *data, t_node *stack)
 {
@@ -29,7 +30,10 @@ void sort_3_or_less(t_data *data, t_node *stack)
     
     current = stack;
     if (data->stack_len == 2)
+    {
         operation_sa(data);
+        return ;
+    }
     if (current->value <  current->next->value)
     {
         operation_rra(data);
@@ -50,7 +54,7 @@ void sort_3_or_less(t_data *data, t_node *stack)
     }
 }
 /*
-①4つの場合
+①4つの場合：最大8
 ・index 0をbに移動した場合：pb + 3_or_less(最大2手) + paだけ
 0 1 2 3
 ・index 1をbに移動した場合：pb + 3_or_less(最大2手) + pa + saだけ
@@ -76,11 +80,12 @@ void sort_3_or_less(t_data *data, t_node *stack)
 ③6つの場合
 
 */
+
 void sort_4(t_data *data)
 {
     size_t  head_index;
 
-    head_index = data->stack_a->index;
+    head_index = data->stack_a->sorted_index;
     operation_pb(data);
     if (confirm_sorted(&(data->stack_a)) == false)
         sort_3_or_less(data, data->stack_a);
@@ -102,12 +107,15 @@ void sort_5(t_data *data)
 {
     size_t head_index;
     
-    head_index = data->stack_a->index;
+    head_index = data->stack_a->sorted_index;
+    operation_pb(data);
     operation_pb(data);
     if (confirm_sorted(&(data->stack_a)) == false)
-        sort_4(data);
+        sort_3_or_less(data);
     operation_pa(data);
-    if (head_index == 1)
+    if (head_index == 0)
+        return ;
+    else if (head_index == 1)
         operation_sa(data);
     else if (head_index == 2)
     {

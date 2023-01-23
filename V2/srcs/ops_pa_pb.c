@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:40:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 18:33:41 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:56:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void operation_pa(t_data *data)
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_a), top);
-    ft_printf("PA\n");
+    data->count++;
 }
 
 void operation_pb(t_data *data)
@@ -54,5 +54,5 @@ void operation_pb(t_data *data)
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_b), top);
-    ft_printf("PB\n");
+    data->count++;
 }

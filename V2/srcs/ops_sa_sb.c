@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:22:51 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/22 18:34:25 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:57:10 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ void sa_or_sb(t_node **stack_head)
 void operation_sa(t_data *data)
 {
     sa_or_sb(&(data->stack_a));
-    ft_printf("SA\n");
+    data->count++;
 }
 
 void operation_sb(t_data *data)
 {
     sa_or_sb(&(data->stack_b));
-    ft_printf("SB\n");
+    data->count++;
 }
 
