@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:52:09 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:19:18 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
         sort_5(data);
     else if (data->stack_len == 6)
         sort_6(data);
-    else
-        sort_7_or_more(data);
+    //else
+        //sort_7_or_more(data);
     printf("---after swap---\n");
     
     current_node=data->stack_a;

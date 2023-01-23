@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 17:14:45 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:19:04 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ void    sort_4(t_data *data);
 void    sort_5(t_data *data);
 void    sort_6(t_data *data);
 
-void    free_data(t_data *data);
+//void    free_data(t_data *data);
 
 #endif
