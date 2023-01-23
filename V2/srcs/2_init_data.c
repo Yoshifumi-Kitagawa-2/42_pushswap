@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 14:54:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:15:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ t_data *init_data(int array[])
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
     set_sorted_index(data);
+    data->index_min = 0; 
+    data->index_max = data->stack_len - 1;
+    data->index_median = data->index_max / 2;
     return (data);
 }
 

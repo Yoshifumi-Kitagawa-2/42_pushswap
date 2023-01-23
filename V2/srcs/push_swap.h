@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:48:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:14:45 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct s_data{
     int     *sorted_array;
     size_t  count;
     size_t  stack_len;
+    size_t  index_min;
+    size_t  index_median;
+    size_t  index_max;
 }t_data;
 
 int     *set_array(int argc, char *argv[]); 
