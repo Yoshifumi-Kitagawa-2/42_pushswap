@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 17:21:32 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:51:13 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ t_data *init_data(int array[])
     data->index_min = 0; 
     data->index_max = data->stack_len - 1;
     data->index_median = (data->index_max / 2) + 1;
-    printf ("index min: %zu\n", data->index_min);
-    printf ("index min: %zu\n", data->index_median);
-    printf ("index min: %zu\n", data->index_max);
+    //printf ("index min: %zu\n", data->index_min);
+    //printf ("index min: %zu\n", data->index_median);
+    //printf ("index min: %zu\n", data->index_max);
     return (data);
 }
 
