@@ -6,11 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:51:44 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:58:11 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+/*
 void sort_7_or_more(t_data *data)
 {
     
 }
+*/
