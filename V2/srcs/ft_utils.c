@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/21 18:43:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:15:21 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,37 @@ void ft_stack_add_front(t_node **stack, t_node *new)
     tail->next=new;
     head->prev=new;
     *stack=new;
+}
+
+size_t find_min_sorted_index(t_node **stack)
+{
+    size_t min_sorted_index;
+    t_node *current;
+
+    current = *stack;
+    min_sorted_index = current->sorted_index;
+    while (current->end == false)
+    {
+        if (min_sorted_index > current->sorted_index)
+            min_sorted_index = current->sorted_index;
+        current = current->next;
+    }
+    if (min_sorted_index > current->sorted_index)
+            min_sorted_index = current->sorted_index;
+    return (min_sorted_index);
+}
+
+size_t find_min_pos(t_node **stack, size_t index)
+{
+    size_t  min_pos;
+    t_node  *current;
+
+    min_pos = 0;
+    current = *stack;
+    while (current->sorted_index != index)
+    {
+        min_pos++;
+        current = current->next;
+    }   
+    return (min_pos);
 }

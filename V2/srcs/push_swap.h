@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 14:54:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:59:59 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void    set_sorted_index(t_data *data);
 size_t  ft_stack_size(t_node *stack);
 void    ft_stack_last(t_node *stack);
 void    ft_stack_add_front(t_node **stack, t_node *new);
+size_t  find_min_sorted_index(t_node **stack);
+size_t  find_min_pos(t_node **stack, size_t index);
 
 void    sa_or_sb(t_node **stack_head);
 void    operation_sa(t_data *data);
