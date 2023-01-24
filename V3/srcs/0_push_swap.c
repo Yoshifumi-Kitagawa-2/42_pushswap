@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 17:19:18 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:14:41 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ int main(int argc, char *argv[])
     
     t_node *current_node;
     
-    printf("---before swap---\n");
-    
     current_node=data->stack_a;
+    
+    printf("---before swap---\n");
+    printf("[stack a]\n");
     do{
         printf("value:%d/", current_node->value);
         printf("end:%d/", current_node->end);
@@ -49,10 +50,10 @@ int main(int argc, char *argv[])
         sort_5(data);
     else if (data->stack_len == 6)
         sort_6(data);
-    //else
-        //sort_7_or_more(data);
+    else
+        sort_7_or_more(data);
     printf("---after swap---\n");
-    
+    printf("[stack a]\n");
     current_node=data->stack_a;
     do{
         printf("value:%d/", current_node->value);
@@ -60,6 +61,7 @@ int main(int argc, char *argv[])
         printf("index:%zu\n", current_node->sorted_index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
+
     printf("%zu\n", data->count);
     //free_data(data);
     return (0);

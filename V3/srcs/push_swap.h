@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 17:19:04 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:23:10 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ typedef struct s_data{
     size_t  count;
     size_t  stack_len;
     size_t  index_min;
-    size_t  index_median;
+    size_t  index_first_quater;
+    size_t  index_second_quater;
+    size_t  index_third_quater;
     size_t  index_max;
 }t_data;
 
@@ -80,6 +82,9 @@ void    sort_3_or_less(t_data *data, t_node *stack);
 void    sort_4(t_data *data);
 void    sort_5(t_data *data);
 void    sort_6(t_data *data);
+
+void    quic_sort(t_data *data, size_t index_1, size_t index_2);
+void    sort_7_or_more(t_data *data);
 
 //void    free_data(t_data *data);
 
