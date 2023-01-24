@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/24 21:23:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 02:19:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ typedef struct s_data{
     size_t  index_max;
 }t_data;
 
+typedef struct s_cost{
+    size_t  ra;
+    size_t  rra;
+}t_cost;
+
 int     *set_array(int argc, char *argv[]); 
 
 t_data  *init_data(int *array);
@@ -59,6 +64,8 @@ void    ft_stack_last(t_node *stack);
 void    ft_stack_add_front(t_node **stack, t_node *new);
 size_t  find_min_sorted_index(t_node **stack);
 size_t  find_min_pos(t_node **stack, size_t index);
+size_t  find_max_sorted_index(t_node **stack);
+size_t  find_next_sorted_index_pos(t_node **stack, size_t index);
 
 void    sa_or_sb(t_node **stack_head);
 void    operation_sa(t_data *data);
@@ -83,7 +90,12 @@ void    sort_4(t_data *data);
 void    sort_5(t_data *data);
 void    sort_6(t_data *data);
 
-void    quick_sort(t_data *data, size_t index_1, size_t index_2);
+//void    quick_sort(t_data *data, size_t index_1, size_t index_2);
+void    push_back_pa(t_data *data, t_cost *cost);
+t_cost  *calc_cost(t_data *data, t_node *current);
+void    push_back(t_data *data, t_node **stack_b);
+
+void    quick_sort(t_data *data, size_t index_1);
 void    sort_7_or_more(t_data *data);
 
 //void    free_data(t_data *data);
