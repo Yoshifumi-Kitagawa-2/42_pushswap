@@ -85,8 +85,8 @@ void    calc_cost_b(t_cost *cost, t_elem *elem, t_info *i)
 
 void    move_elem_b(t_info *info, t_elem *from)
 {
-    t_elem*tmp;
-    t_costcost;
+    t_elem  *tmp;
+    t_cost  cost;
 
     cost = (t_cost){0};
     cost.cost = stacklen(info->stack_a) + stacklen(info->stack_b);

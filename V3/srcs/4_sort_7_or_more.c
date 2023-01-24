@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/24 20:05:12 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/24 21:29:28 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //クイックソートでやる
 
-void    quick_sort(t_data *data)
+void    quick_sort(t_data *data, size_t index_1, size_t index_2)
 {
     t_node *current;
     size_t i;
@@ -25,7 +25,7 @@ void    quick_sort(t_data *data)
     current = data->stack_a;
     while (i <stack_a_len)
     {
-        if (current->sorted_index >= index_1)
+        if (current->sorted_index > index_1)
         {
             operation_pb(data);
             if (current->sorted_index > index_2)
@@ -40,4 +40,6 @@ void    quick_sort(t_data *data)
 
 void sort_7_or_more(t_data *data)
 {
+    quick_sort(data, data->index_second_quater, data->index_third_quater);
+}
     

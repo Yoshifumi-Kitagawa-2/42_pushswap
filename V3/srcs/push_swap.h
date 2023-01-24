@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/24 18:23:10 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/24 21:23:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void    sort_4(t_data *data);
 void    sort_5(t_data *data);
 void    sort_6(t_data *data);
 
-void    quic_sort(t_data *data, size_t index_1, size_t index_2);
+void    quick_sort(t_data *data, size_t index_1, size_t index_2);
 void    sort_7_or_more(t_data *data);
 
 //void    free_data(t_data *data);

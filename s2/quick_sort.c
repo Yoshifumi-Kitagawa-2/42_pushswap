@@ -14,6 +14,7 @@ void    quick_sort_1(t_info *info, size_t ax1_pos, size_t ax2_pos)
             op_ra(info);
             tmp = info->stack_a;
         }
+        //ax1_pos1が基準値
         if (tmp->pos >= ax1_pos)
         {
             op_pb(info);
@@ -50,6 +51,7 @@ void    push_n_swap(t_info *info)
     {
         move_elem_b(info, info->stack_b);
     }
+    //comp
     ra = index_of_stack(info->stack_a, stackminnum(info->stack_a));
     rra = stacklen(info->stack_a) - ra;
     if (ra > rra)
