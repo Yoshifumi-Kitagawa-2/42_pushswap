@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   4_sort_7_or_more.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/24 18:23:16 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:05:12 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //クイックソートでやる
 
-void    quick_sort(t_data *data, size_t index_1, size_t index_2)
+void    quick_sort(t_data *data)
 {
     t_node *current;
     size_t i;
@@ -38,8 +38,6 @@ void    quick_sort(t_data *data, size_t index_1, size_t index_2)
     }
 }
 
-
 void sort_7_or_more(t_data *data)
 {
-    quick_sort_twice(data);
-}
+    
