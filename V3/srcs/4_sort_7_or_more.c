@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 02:27:47 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 02:36:52 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ void push_back_pa(t_data *data, t_cost *cost)
     operation_pa(data);
 }
 
-t_cost *calc_cost(t_data *data, t_node *current)
+t_cost calc_cost(t_data *data, t_node *current)
 {
-    t_cost *cost;
+    t_cost cost;
     size_t stack_a_size;
     size_t min_sorted_index_at_stack_a;
     size_t min_pos;
     size_t max_sorted_index_at_stack_a;
     
-    cost->ra = 0;
-    cost->rra = 0;
+    cost.ra = 0;
+    cost.rra=0;
     stack_a_size = 0;
     min_sorted_index_at_stack_a = 0;
     min_pos = 0;
@@ -55,7 +55,7 @@ t_cost *calc_cost(t_data *data, t_node *current)
     stack_a_size = ft_stack_size(data->stack_a);
     if (stack_a_size < 2)
         return (cost);
-    
+    /*
     min_sorted_index_at_stack_a = find_min_sorted_index(&(data->stack_a));
     max_sorted_index_at_stack_a = find_min_sorted_index(&(data->stack_a));
 
@@ -77,22 +77,36 @@ t_cost *calc_cost(t_data *data, t_node *current)
         else
             cost->rra = stack_a_size - next_sorted_index_pos;
     }
+    */
     return (cost);
 }
 
+/*
 void push_back(t_data *data, t_node **stack_b)
 {
-    t_cost *cost;
     t_node *current;
     
-    cost = NULL;
     current = *stack_b;
     while (current != NULL)
     {
+        t_cost *cost;
+        cost = NULL;
         cost = calc_cost(data, current);
         push_back_pa(data, cost);
         current=*stack_b;
     }
+}
+*/
+void push_back(t_data *data, t_node **stack_b)
+{
+    t_node *current;
+    t_cost cost;
+    
+    cost.ra = 0;
+    cost.rra = 0;
+    current = *stack_b;
+    cost = calc_cost(data, current);
+    push_back_pa(data, cost);
 }
 
 void    quick_sort(t_data *data, size_t index_1)

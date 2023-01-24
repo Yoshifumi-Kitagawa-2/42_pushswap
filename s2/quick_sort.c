@@ -51,7 +51,6 @@ void    push_n_swap(t_info *info)
     {
         move_elem_b(info, info->stack_b);
     }
-    
     ra = index_of_stack(info->stack_a, stackminnum(info->stack_a));
     rra = stacklen(info->stack_a) - ra;
     if (ra > rra)
