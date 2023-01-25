@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 13:33:43 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:51:16 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,11 @@ t_data *init_data(int array[])
     data->index_second_quater = data->index_max / 4 * 2;
     data->index_third_quater = data->index_max / 4 * 3;
     */
-    data->index_first = data->index_max / 8;
-    data->index_second = data->index_second / 8 * 2;
-    data->index_third = data->index_third / 8 * 3;
-    data->index_second = data->index_forth / 8 * 4;
-    data->index_third = data->index_fifth / 8 * 5;
-    data->index_second = data->index_sixth / 8 * 6;
-    data->index_third = data->index_seventh / 8 * 7;
-
+    data->index_first = data->index_max / 5;
+    data->index_second = data->index_max / 5 * 2;
+    data->index_third = data->index_max / 5 * 3;
+    data->index_forth = data->index_max / 5 * 4;
+    
     return (data);
 }
 
