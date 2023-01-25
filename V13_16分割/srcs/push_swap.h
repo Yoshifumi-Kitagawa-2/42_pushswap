@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 17:33:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:37:27 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ typedef struct s_data{
     size_t  index_nineth;
     size_t  index_tenth;
     size_t  index_eleventh;
+    size_t  index_twelveth;
+    size_t  index_thirteenth;
+    size_t  index_fourteenth;
+    size_t  index_fifteenth;
     size_t  index_max;
 }t_data;
 

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 17:34:28 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:50:44 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,8 @@ void    quick_sort(t_data *data, size_t index_1)
 }
 
 void sort_7_or_more(t_data *data)
-{  
+{ 
+    quick_sort(data, data->index_twelveth);
     quick_sort(data, data->index_eleventh);
     quick_sort(data, data->index_tenth);
     quick_sort(data, data->index_nineth);

@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 17:34:07 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:50:19 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,18 @@ t_data *init_data(int array[])
     data->index_second_quater = data->index_max / 4 * 2;
     data->index_third_quater = data->index_max / 4 * 3;
     */
-    data->index_first = data->index_max / 12;
-    data->index_second = data->index_max / 12 * 2;
-    data->index_third = data->index_max / 12 * 3;
-    data->index_forth = data->index_max / 12 * 4;
-    data->index_fifth = data->index_max / 12 * 5;
-    data->index_sixth = data->index_max / 12 * 6;
-    data->index_seventh = data->index_max / 12 * 7;
-    data->index_eigth = data->index_max / 12 * 8;
-    data->index_nineth = data->index_max / 12 * 9;
-    data->index_tenth = data->index_max / 12 * 10;
-    data->index_eleventh = data->index_max / 12 * 11;
+    data->index_first = data->index_max / 13;
+    data->index_second = data->index_max / 13 * 2;
+    data->index_third = data->index_max / 13 * 3;
+    data->index_forth = data->index_max / 13 * 4;
+    data->index_fifth = data->index_max / 13 * 5;
+    data->index_sixth = data->index_max / 13 * 6;
+    data->index_seventh = data->index_max / 13 * 7;
+    data->index_eigth = data->index_max / 13 * 8;
+    data->index_nineth = data->index_max / 13 * 9;
+    data->index_tenth = data->index_max / 13 * 10;
+    data->index_eleventh = data->index_max / 13 * 11;
+    data->index_twelveth = data->index_max / 13 * 12;
     return (data);
 }
 
