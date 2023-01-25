@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 14:53:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:59:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_node{
     struct s_node  *next;
     bool           end;
     size_t         sorted_index; //座標圧縮用//最初は引数順。valueに合わせて入れ替える。
+    bool           need_sort;
 }t_node;
 
 typedef struct s_data{
@@ -44,7 +45,6 @@ typedef struct s_data{
     size_t  index_second_quater;
     size_t  index_third_quater;
     size_t  index_max;
-    size_t  
 }t_data;
 
 typedef struct s_cost{
