@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 14:32:19 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:16:22 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,14 @@ void    quick_sort(t_data *data, size_t index_1)
     size_t i;
     size_t  stack_a_len;
     
-    
     stack_a_len = ft_stack_size(data->stack_a);
     i =0;
     current = data->stack_a;
     while (i < stack_a_len)
     {
-        if (current->sorted_index >= index_1)
+        if (current->need_sort == false)
+            operation_ra(data);
+        else if (current->sorted_index >= index_1)
             operation_pb(data);
         else
             operation_ra(data);
@@ -118,24 +119,68 @@ void    quick_sort(t_data *data, size_t index_1)
     }
 }
 
-void sort_7_or_more(t_data *data)
-{  
-   quick_sort(data, data->index_third_quater);
-   quick_sort(data, data->index_second_quater);
-   quick_sort(data, data->index_first_quater);
-   quick_sort(data, 0);
-   push_back(data, &(data->stack_b));
-   
-   size_t min_pos;
+void set_min_top(t_data *data)
+{
+    size_t min_pos;
+    t_node *head;
 
-   min_pos = find_min_pos(&(data->stack_a), 0);
-   
-   while (data->stack_a->sorted_index != 0)
-   {
+    head = data->stack_a;
+    min_pos = find_min_pos(&(data->stack_a), 0);
+    while (head->sorted_index != 0)
+    {
         if (min_pos < data->stack_len / 2)
             operation_ra(data);
         else
             operation_rra(data);
-   }
+        head = data->stack_a;
+    }
+}
+
+void judge_each_node_need_sort(t_data *data)
+{
+    t_node *head;
+    t_node *next;
+    size_t comp_sorted_index;
+    
+    head = data->stack_a;
+    head->need_sort = false;
+    comp_sorted_index = head->sorted_index;
+    next = head->next;
+    while (next != head)
+    {
+        if (next->sorted_index > comp_sorted_index)
+        {
+            next->need_sort = false;
+            comp_sorted_index = next->sorted_index;
+        }
+        else
+            next->need_sort = true;
+        next=next->next;
+    }
+}
+
+void sort_7_or_more(t_data *data)
+{  
+    set_min_top(data);
+    judge_each_node_need_sort(data);
+    
+    quick_sort(data, data->index_third_quater);
+    quick_sort(data, data->index_second_quater);
+    quick_sort(data, data->index_first_quater);
+    quick_sort(data, 0);
+    
+    push_back(data, &(data->stack_b));
+   
+    size_t min_pos;
+
+    min_pos = find_min_pos(&(data->stack_a), 0);
+    
+    while (data->stack_a->sorted_index != 0)
+    {
+            if (min_pos < data->stack_len / 2)
+                operation_ra(data);
+            else
+                operation_rra(data);
+    }
 }
     

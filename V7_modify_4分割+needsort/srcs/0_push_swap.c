@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 13:05:19 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:17:06 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
         current_node=current_node->next;
     }while(current_node != data->stack_a);
     */
+   
     if (confirm_sorted(&(data->stack_a)) == true)
         return (0);
     if (data->stack_len < 4)
@@ -63,8 +64,8 @@ int main(int argc, char *argv[])
         printf("index:%zu\n", current_node->sorted_index);
         current_node=current_node->next;
     }while(current_node != data->stack_a);
-    */
-    /*
+    
+
     printf("[stack b]\n");
     current_node_b = data->stack_b;
     
@@ -74,8 +75,9 @@ int main(int argc, char *argv[])
         printf("index:%zu\n", current_node_b->sorted_index);
         current_node_b=current_node_b->next;
     }while(current_node_b != data->stack_b);
+
+    printf("%zu\n", data->count);
     */
-    //printf("%zu\n", data->count);
     //free_data(data);
     return (0);
 }

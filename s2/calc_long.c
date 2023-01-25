@@ -35,7 +35,7 @@ int calc_elem_lis_count(t_elem *elem)
         if (tmp->pos < elem->pos)
         {
             if (tmp->lis_len > lis_len)
-            lis_len = tmp->lis_len;
+                lis_len = tmp->lis_len;
         }
         tmp = tmp->prev;
     }
@@ -57,9 +57,9 @@ void    calc_longest_increasing_subsequence(t_info *info)
         next->lis = false;
         next->lis_len = calc_elem_lis_count(next);
         if (next->lis_len > info->lis_head->lis_len)
-        info->lis_head = next;
+            info->lis_head = next;
         if (next->is_end == true)
-        break ;
+            break ;
         next = next->next;
     }
     mark_lis_elems(info->lis_head, info);

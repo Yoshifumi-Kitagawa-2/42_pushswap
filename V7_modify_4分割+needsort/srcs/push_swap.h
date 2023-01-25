@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 14:59:24 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:12:33 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,10 @@ t_cost  calc_cost(t_data *data, t_node *current);
 void    push_back(t_data *data, t_node **stack_b);
 
 void    quick_sort(t_data *data, size_t index_1);
+
+void    set_min_top(t_data *data);
+void    judge_each_node_need_sort(t_data *data);
+
 void    sort_7_or_more(t_data *data);
 
 //void    free_data(t_data *data);

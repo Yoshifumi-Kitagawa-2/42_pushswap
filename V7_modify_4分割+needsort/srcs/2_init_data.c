@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 15:02:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:38:35 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_data *init_data(int array[])
     data->index_first_quater = data->index_max / 4;
     data->index_second_quater = data->index_max / 4 * 2;
     data->index_third_quater = data->index_max / 4 * 3;
-    judge_need_sort(data);
     return (data);
 }
 
@@ -129,18 +128,5 @@ void set_sorted_index(t_data *data)
             break;
         }
         index++;
-    }
-}
-
-void judge_need_sort(t_data *data)
-{
-    t_node *current;
-
-    current = data->stack_a;
-    
-    while (current->prev->end == false)
-    {
-
-        current = current->next;
     }
 }
