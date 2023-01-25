@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   2_init_data.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/24 22:31:00 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:33:43 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,19 @@ t_data *init_data(int array[])
     set_sorted_index(data);
     data->index_min = 0; 
     data->index_max = data->stack_len - 1;
+    /*
     data->index_first_quater = data->index_max / 4;
     data->index_second_quater = data->index_max / 4 * 2;
     data->index_third_quater = data->index_max / 4 * 3;
+    */
+    data->index_first = data->index_max / 8;
+    data->index_second = data->index_second / 8 * 2;
+    data->index_third = data->index_third / 8 * 3;
+    data->index_second = data->index_forth / 8 * 4;
+    data->index_third = data->index_fifth / 8 * 5;
+    data->index_second = data->index_sixth / 8 * 6;
+    data->index_third = data->index_seventh / 8 * 7;
+
     return (data);
 }
 
