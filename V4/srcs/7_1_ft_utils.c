@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   7_1_ft_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 02:15:34 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:26:40 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,17 +131,21 @@ size_t find_next_sorted_index_pos(t_node **stack, size_t index)
     size_t next_sorted_index_pos;
 
     current = *stack;
-    prev_sorted_index = 0;
-    next_sorted_index = 0;
+    prev_sorted_index = current->prev->sorted_index;
+    next_sorted_index = current->sorted_index;
+    //printf("prev_sorted_index:%zu\n", prev_sorted_index);
+    //printf("next_sorted_index:%zu\n", next_sorted_index);
     next_sorted_index_pos = 0;
     while (current->end == false)
     {
         prev_sorted_index = current->prev->sorted_index;
         next_sorted_index = current->sorted_index;
-        if (prev_sorted_index < index < next_sorted_index)
+        //printf("prev_sorted_index:%zu\n", prev_sorted_index);
+        //printf("next_sorted_index:%zu\n", next_sorted_index);
+        if (prev_sorted_index < index &&  index < next_sorted_index)
             break;
         next_sorted_index_pos++;
         current=current->next;
-    }   
+    }
     return (next_sorted_index_pos);
 }

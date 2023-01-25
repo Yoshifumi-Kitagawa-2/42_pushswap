@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yokitaga <yokitaga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 02:19:42 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:00:36 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void    sort_6(t_data *data);
 
 //void    quick_sort(t_data *data, size_t index_1, size_t index_2);
 void    push_back_pa(t_data *data, t_cost *cost);
-t_cost  *calc_cost(t_data *data, t_node *current);
+t_cost  calc_cost(t_data *data, t_node *current);
 void    push_back(t_data *data, t_node **stack_b);
 
 void    quick_sort(t_data *data, size_t index_1);
