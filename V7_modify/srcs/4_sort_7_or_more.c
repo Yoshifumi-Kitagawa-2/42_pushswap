@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 12:58:28 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:10:48 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,9 +133,7 @@ void    quick_sort(t_data *data, size_t index_1)
     while (i <stack_a_len)
     {
         if (current->sorted_index >= index_1)
-        {
             operation_pb(data);
-        }
         else
             operation_ra(data);
         current = data->stack_a;
