@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:50:45 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/25 14:11:02 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:32:19 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,7 @@ t_cost calc_cost(t_data *data, t_node *current)
     
     min_sorted_index_at_stack_a = find_min_sorted_index(&(data->stack_a));
     max_sorted_index_at_stack_a = find_max_sorted_index(&(data->stack_a));
-    /*
-    printf("%zu\n", min_sorted_index_at_stack_a);
-    printf("%zu\n", max_sorted_index_at_stack_a);
-    printf("%zu\n", current->sorted_index);
-    */
+    
     if (current->sorted_index < min_sorted_index_at_stack_a || current->sorted_index > max_sorted_index_at_stack_a)
     {
         min_pos = find_min_pos(&(data->stack_a), min_sorted_index_at_stack_a);
@@ -77,8 +73,6 @@ t_cost calc_cost(t_data *data, t_node *current)
         size_t  next_sorted_index_pos = 0;
 
         next_sorted_index_pos = find_next_sorted_index_pos(&(data->stack_a), current->sorted_index);
-        //printf("%zu\n", next_sorted_index_pos);
-        //printf("%zu\n", stack_a_size);
         if (next_sorted_index_pos < stack_a_size / 2)
             cost.ra = next_sorted_index_pos;
         else
@@ -86,23 +80,6 @@ t_cost calc_cost(t_data *data, t_node *current)
     }
     return (cost);
 }
-
-/*
-void push_back(t_data *data, t_node **stack_b)
-{
-    t_node *current;
-    
-    current = *stack_b;
-    while (current != NULL)
-    {
-        t_cost *cost;
-        cost = NULL;
-        cost = calc_cost(data, current);
-        push_back_pa(data, cost);
-        current=*stack_b;
-    }
-}
-*/
 
 void push_back(t_data *data, t_node **stack_b)
 {
