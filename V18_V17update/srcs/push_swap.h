@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 17:24:04 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:51:47 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_cost{
     size_t  rra;
 }t_cost;
 
+bool    check_argv(char *argv);
 int     *set_array(int argc, char *argv[]); 
 
 t_data  *init_data(int *array);
