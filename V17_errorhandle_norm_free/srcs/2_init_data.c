@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:24:37 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:06:59 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_data *init_data(int array[])
     data->stack_b=NULL;
     data->sorted_array = sort_array(array);
     
-    data->count = 0;
     data->stack_len=ft_stack_size(data->stack_a);
     
     ft_stack_last(data->stack_a);
