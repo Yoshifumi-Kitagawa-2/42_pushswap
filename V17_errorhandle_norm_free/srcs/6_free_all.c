@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 21:54:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:09:33 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:46:27 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void free_stack_and_data(t_data *data)
         free(current);
     }
     free(data);
-    ft_printf("stack and data were freeed\n");
 }

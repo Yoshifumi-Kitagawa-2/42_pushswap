@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:27:08 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:41:07 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int *set_array(int argc, char *argv[])
         array[i] =  ft_atoi(argv[i + 1]);
         i++;
     }
-    
     return (array);
 }

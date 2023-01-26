@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:28:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:46:15 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         free_stack_and_data(data);
         return (0);
     }
-    
+
     if (data->stack_len < 4)
         sort_3_or_less(data, data->stack_a);
     else if (data->stack_len == 4)
