@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 21:24:49 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:31:15 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ typedef struct s_cost{
     size_t  rra;
 }t_cost;
 
-bool    check_argv(char *argv);
+int	    ft_isspace(int c);
+bool    check_str(const char *str);
+int     n_atoi(const char *str, int flag);
+int	    ft_atoi_for_push_swap(const char    *str);
 int     *set_array(int argc, char *argv[]); 
 
 t_data  *init_data(int *array);
