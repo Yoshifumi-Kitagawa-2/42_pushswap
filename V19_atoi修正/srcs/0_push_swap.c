@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 19:50:29 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:00:49 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ int main(int argc, char *argv[])
     if (array == NULL)
         put_error_and_exit();
     
-    size_t  array_size;
-    array_size = get_array_size(array);
-    if (array_size != argc - 1)
-    {
-        free(array);
-        put_error_and_exit();
-    }
 
     data = init_data(array);
     

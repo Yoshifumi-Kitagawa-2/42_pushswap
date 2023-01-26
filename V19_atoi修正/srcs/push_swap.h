@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 19:51:47 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:24:49 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 # include "../lib/libft.h"
 #include <stdlib.h>
-
 #include <stdbool.h>
+#include <limits.h>
 
 typedef struct s_node{
     struct s_node  *prev;
