@@ -6,45 +6,38 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 23:46:24 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/27 00:19:56 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_data *init_data(int array[])
+t_data *init_data(int array[], int argc)
 {
     t_data *data;
     
     data=(t_data *)malloc(sizeof(t_data));
     if (data == NULL)
         return (NULL);
+    data->n_data = argc - 1;
     data->stack_malloc = false;
-    data->stack_a=create_stack(array);
+    data->stack_a=create_stack(array, data->n_data);
     if (data->stack_a == NULL)
         return (data);
     data->stack_malloc = true;
     data->stack_b=NULL;
-    data->sorted_array = sort_array(array);
+    data->sorted_array = sort_array(array, data->n_data);
     
     data->stack_len=ft_stack_size(data->stack_a);
     
     ft_stack_last(data->stack_a);
 
     data->comp_prep_stack_a = true;
-    size_t array_size = 0;
-    array_size = get_array_size(array);
-    
-    printf("data->stack_len:%zu\n", data->stack_len);
-    printf("array_size:%zu\n", array_size);
-    if (data->stack_len != array_size)
-    {
+    if (data->stack_len != data->n_data)
         data->comp_prep_stack_a = false;
-        return (data);
-    }
     
     set_sorted_index(data);
-    data->index_min = 0; 
+    data->index_min = 0;
     data->index_max = data->stack_len - 1;
     
     data->index_first = data->index_max / 12;
@@ -75,7 +68,7 @@ t_node *create_node(int value, size_t index)
     return(new_node);
 }
 
-t_node *create_stack(int array[])
+t_node *create_stack(int array[], int size)
 {
     t_node *head;
     t_node *tail;
@@ -86,7 +79,7 @@ t_node *create_stack(int array[])
     if (head == NULL)
         return (NULL);
     tail=head;
-    while(array[i] != '\0')
+    while(i < size)
     {
         t_node *new_node;
         new_node=create_node(array[i], i);
@@ -106,7 +99,7 @@ t_node *create_stack(int array[])
     return (head);
 }
 
-int *sort_array(int *array)
+int *sort_array(int *array, int size)
 {
     int     *sorted_array;
     size_t  i;
@@ -115,10 +108,10 @@ int *sort_array(int *array)
     
     sorted_array = array;
     i = 0;
-    while (sorted_array[i] != '\0')
+    while (i < size)
     {
         j = i + 1;
-        while (sorted_array[j] != '\0')
+        while (j < size)
         {
             if (sorted_array[i] > sorted_array[j])
             {
@@ -143,7 +136,7 @@ void set_sorted_index(t_data *data)
     while (current->end == false)
     {
         index = 0;
-        while (data->sorted_array[index] != '\0')
+        while (index < data->n_data)
         {
             if (current->value == data->sorted_array[index])
             {
@@ -155,7 +148,7 @@ void set_sorted_index(t_data *data)
         current = current->next;   
     }
     index = 0;
-    while (data->sorted_array[index] != '\0')
+    while (index < data->n_data)
     {
         if (current->value == data->sorted_array[index])
         {
@@ -183,19 +176,4 @@ bool    check_duplicate(int *array)
         i++;
     }
     return(check_result);
-}
-
-size_t  get_array_size(int *array)
-{
-    size_t  i;
-    size_t  array_size;
-
-    i = 0;
-    array_size = 0;
-    while (array[i] != '\0')
-    {
-        array_size++;
-        i++;
-    }
-    return (array_size);
 }

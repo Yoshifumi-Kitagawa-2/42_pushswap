@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 23:46:24 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/27 00:00:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,9 @@ t_data *init_data(int array[])
     ft_stack_last(data->stack_a);
 
     data->comp_prep_stack_a = true;
-    size_t array_size = 0;
-    array_size = get_array_size(array);
     
-    printf("data->stack_len:%zu\n", data->stack_len);
-    printf("array_size:%zu\n", array_size);
-    if (data->stack_len != array_size)
-    {
-        data->comp_prep_stack_a = false;
-        return (data);
-    }
+    printf("data->stack_len:%d\n", data->stack_len);
+    printf("data->n_data:%d\n", data->n_data);
     
     set_sorted_index(data);
     data->index_min = 0; 

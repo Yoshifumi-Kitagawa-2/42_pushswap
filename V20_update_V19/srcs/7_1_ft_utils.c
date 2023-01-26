@@ -6,16 +6,16 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:44:13 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 17:11:50 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:54:34 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t ft_stack_size(t_node *stack)
+int ft_stack_size(t_node *stack)
 {
-    size_t size;
-    t_node *head;
+    int     size;
+    t_node  *head;
 
     size=1;
     head=stack;

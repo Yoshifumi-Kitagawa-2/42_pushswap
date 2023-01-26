@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 23:40:15 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/27 00:19:47 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ typedef struct s_data{
     t_node  *stack_a;
     t_node  *stack_b;
     int     *sorted_array;
-    size_t  stack_len;
+    int     n_data;
+    int     stack_len;
     size_t  index_min;
 
     size_t  index_first;
@@ -62,15 +63,15 @@ int     n_atoi(const char *str, int flag);
 int	    ft_atoi_for_push_swap(const char    *str);
 int     *set_array(int argc, char *argv[]); 
 
-t_data  *init_data(int *array);
-int     *sort_array(int array[]);
+t_data  *init_data(int *array, int argc);
+int     *sort_array(int array[], int size);
 t_node  *create_node(int value, size_t index);
-t_node  *create_stack(int array[]);
+t_node  *create_stack(int array[], int size);
 void    set_sorted_index(t_data *data);
 bool    check_duplicate(int *array);
 size_t  get_array_size(int *array);
 
-size_t  ft_stack_size(t_node *stack);
+int     ft_stack_size(t_node *stack);
 void    ft_stack_last(t_node *stack);
 void    ft_stack_add_front(t_node **stack, t_node *new);
 size_t  find_min_sorted_index(t_node **stack);

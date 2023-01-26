@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 23:16:30 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:47:54 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         return (0);
     }
     
-    data = init_data(array);
+    data = init_data(array, argc);
     
     if (data == NULL)
         put_error_and_exit();
