@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 14:42:48 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:27:08 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int *set_array(int argc, char *argv[])
     
     array = (int *)ft_calloc(argc, sizeof(int));
     if (array == NULL)
-    {
-        ft_printf("Error\n");
         return (NULL);
-    }
     i = 0;
     while (i < argc - 1)
     {
