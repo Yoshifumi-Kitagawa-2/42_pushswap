@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 17:12:12 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:24:04 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,11 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//libraryを使う用
 # include "../lib/libft.h"
-//printf 使う用
-# include <stdio.h>
-//malloc
 #include <stdlib.h>
 
 #include <stdbool.h>
 
-//双方向循環連結リスト
 typedef struct s_node{
     struct s_node  *prev;
     int            value;
