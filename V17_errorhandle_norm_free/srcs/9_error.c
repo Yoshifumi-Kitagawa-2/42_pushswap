@@ -6,7 +6,14 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:03:03 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 14:34:28 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:06:46 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void put_error_and_exit(void)
+{
+    ft_printf("Error\n");
+    exit(EXIT_FAILURE);
+}

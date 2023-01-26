@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 14:43:27 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:19:29 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ t_data *init_data(int array[])
     
     data=(t_data *)malloc(sizeof(t_data));
     if (data == NULL)
-    {
-        ft_printf("MALLOC ERROR AT INIT DATA\n");
         return (NULL);
-    }
+    data->data_malloc = true;
     data->stack_a=create_stack(array);
     data->stack_b=NULL;
     data->sorted_array = sort_array(array);
+    
     data->count = 0;
     data->stack_len=ft_stack_size(data->stack_a);
     ft_stack_last(data->stack_a);
@@ -105,7 +104,6 @@ int *sort_array(int *array)
         }
         i++;
     }
-
     return (sorted_array);
 }
 
@@ -140,4 +138,23 @@ void set_sorted_index(t_data *data)
         }
         index++;
     }
+}
+
+bool    check_duplicate(int *array)
+{
+    bool    check_result;
+    size_t  i;
+
+    check_result = false;
+    i = 0;
+    while (array[i + 1] != '\0')
+    {
+        if (array[i] == array[i + 1])
+        {
+            check_result = true;
+            break;
+        }
+        i++;
+    }
+    return(check_result);
 }

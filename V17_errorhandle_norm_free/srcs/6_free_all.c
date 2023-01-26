@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 21:54:38 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 13:42:18 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:46:36 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 void free_stack_and_data(t_data *data)
 {
     t_node *current;
+    t_node *next;
     
     current = data->stack_a;
     while (current->end == false)
     {
-        current = current->next;
-        free(current->prev);
+        next = current->next;
+        free(current);
+        current = next;
     }
-    free(current->prev);
     free(current);
     free(data);
+    ft_printf("stack and data were freeed\n");
 }
