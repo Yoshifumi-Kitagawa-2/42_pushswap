@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 17:10:20 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:42:12 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     t_data *data;
     int    *array;
     
-    if (argc - 1 <= 0)
+    if (argc < 2)
         return (0);
     
     array = set_array(argc, argv);
