@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:46:15 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:10:20 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
         sort_6(data);
     else
         sort_7_or_more(data);
-    
+
     free(array);
     free_stack_and_data(data);
     return (0);

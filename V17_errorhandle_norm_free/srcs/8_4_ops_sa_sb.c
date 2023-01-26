@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_sa_sb.c                                        :+:      :+:    :+:   */
+/*   8_4_ops_sa_sb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:22:51 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:47:28 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:20:06 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,12 @@ void sa_or_sb(t_node **stack_head)
 void operation_sa(t_data *data)
 {
     sa_or_sb(&(data->stack_a));
-    printf("sa\n");
-    data->count++;
+    ft_printf("sa\n");
 }
 
 void operation_sb(t_data *data)
 {
     sa_or_sb(&(data->stack_b));
-    printf("sb\n");
-    data->count++;
+    ft_printf("sb\n");
 }
 

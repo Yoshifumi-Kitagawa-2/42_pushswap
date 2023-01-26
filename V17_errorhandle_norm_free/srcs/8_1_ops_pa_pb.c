@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_pa_pb.c                                        :+:      :+:    :+:   */
+/*   8_1_ops_pa_pb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:40:47 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:47:23 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:18:48 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void operation_pa(t_data *data)
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_a), top);
-    printf("pa\n");
-    data->count++;
+    ft_printf("pa\n");
 }
 
 void operation_pb(t_data *data)
@@ -55,6 +54,5 @@ void operation_pb(t_data *data)
     if (top == NULL)
         return ;
     ft_stack_add_front(&(data->stack_b), top);
-    printf("pb\n");
-    data->count++;
+    ft_printf("pb\n");
 }

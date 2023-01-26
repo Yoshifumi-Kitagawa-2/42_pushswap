@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_rra_rrb.c                                      :+:      :+:    :+:   */
+/*   8_3_ops_rra_rrb.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:39:27 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/23 16:08:21 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:19:52 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ void rra_or_rrb(t_node **stack_head)
 void operation_rra(t_data *data)
 {
     rra_or_rrb(&(data->stack_a));
-    printf("rra\n");
-    data->count++;
+    ft_printf("rra\n");
 }
 
 void operation_rrb(t_data *data)
 {
     rra_or_rrb(&(data->stack_b));
-    printf("rrb\n");
-    data->count++;
+    ft_printf("rrb\n");
 }
 

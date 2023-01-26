@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 16:23:48 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:12:12 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct s_data{
     t_node  *stack_a;
     t_node  *stack_b;
     int     *sorted_array;
-    size_t  count;
     size_t  stack_len;
     size_t  index_min;
 
