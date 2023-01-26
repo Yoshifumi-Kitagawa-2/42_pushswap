@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 22:03:13 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:05:32 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	ft_atoi_for_push_swap(const char	*str)
 	int	n;
 	int flag;
 
+	if (*str == '\0')
+		put_error_and_exit();
 	n = 0;
 	flag = 1;
 	while (*str != '\0' && ft_isspace(*str) == 1)
