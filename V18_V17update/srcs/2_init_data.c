@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 19:07:11 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:45:42 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,8 @@ bool    check_duplicate(int *array)
     return(check_result);
 }
 
-size_t  get_array_size(int *array)
+/*
+size_t  get_array_size(int *array, )
 {
     size_t  i;
     size_t  array_size;
@@ -194,3 +195,4 @@ size_t  get_array_size(int *array)
         array_size++;
     return (array_size);
 }
+*/

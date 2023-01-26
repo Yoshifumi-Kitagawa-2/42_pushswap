@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:10:10 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 23:05:55 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:16:30 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int main(int argc, char *argv[])
         free_stack_and_data(data);
         put_error_and_exit();
     }
-
+    
     if (data->comp_prep_stack_a == false)
     {
         free(array);
         free_stack_and_data(data);
         put_error_and_exit();
     }
-    
+
     if (check_duplicate(array) == true)
     {
         free(array);
@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
         free_stack_and_data(data);
         return (0);
     }
+    
 
     if (data->stack_len < 4)
         sort_3_or_less(data, data->stack_a);

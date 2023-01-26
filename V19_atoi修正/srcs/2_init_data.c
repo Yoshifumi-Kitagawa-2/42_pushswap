@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 19:07:11 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:46:24 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_data *init_data(int array[])
 {
     t_data *data;
-    size_t array_size;
     
     data=(t_data *)malloc(sizeof(t_data));
     if (data == NULL)
@@ -33,8 +32,11 @@ t_data *init_data(int array[])
     ft_stack_last(data->stack_a);
 
     data->comp_prep_stack_a = true;
+    size_t array_size = 0;
     array_size = get_array_size(array);
     
+    printf("data->stack_len:%zu\n", data->stack_len);
+    printf("array_size:%zu\n", array_size);
     if (data->stack_len != array_size)
     {
         data->comp_prep_stack_a = false;
@@ -190,7 +192,10 @@ size_t  get_array_size(int *array)
 
     i = 0;
     array_size = 0;
-    while (array[i++] != '\0')
+    while (array[i] != '\0')
+    {
         array_size++;
+        i++;
+    }
     return (array_size);
 }
