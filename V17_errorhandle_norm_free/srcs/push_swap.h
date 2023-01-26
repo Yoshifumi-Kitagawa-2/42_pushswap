@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 23:30:31 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 15:16:41 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:23:48 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ typedef struct s_node{
 }t_node;
 
 typedef struct s_data{
-    bool    data_malloc;
+    bool    comp_prep_stack_a;
+    bool    stack_malloc;
     t_node  *stack_a;
     t_node  *stack_b;
     int     *sorted_array;
@@ -69,6 +70,7 @@ t_node  *create_node(int value, size_t index);
 t_node  *create_stack(int array[]);
 void    set_sorted_index(t_data *data);
 bool    check_duplicate(int *array);
+size_t  get_array_size(int *array);
 
 size_t  ft_stack_size(t_node *stack);
 void    ft_stack_last(t_node *stack);

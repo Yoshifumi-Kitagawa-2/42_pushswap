@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:42:59 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 15:19:29 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:24:37 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,33 @@
 t_data *init_data(int array[])
 {
     t_data *data;
+    size_t array_size;
     
     data=(t_data *)malloc(sizeof(t_data));
     if (data == NULL)
         return (NULL);
-    data->data_malloc = true;
+    data->stack_malloc = false;
     data->stack_a=create_stack(array);
+    if (data->stack_a == NULL)
+        return (data);
+    data->stack_malloc = true;
     data->stack_b=NULL;
     data->sorted_array = sort_array(array);
     
     data->count = 0;
     data->stack_len=ft_stack_size(data->stack_a);
+    
     ft_stack_last(data->stack_a);
+
+    data->comp_prep_stack_a = true;
+    array_size = get_array_size(array);
+    
+    if (data->stack_len != array_size)
+    {
+        data->comp_prep_stack_a = false;
+        return (data);
+    }
+    
     set_sorted_index(data);
     data->index_min = 0; 
     data->index_max = data->stack_len - 1;
@@ -50,6 +65,8 @@ t_node *create_node(int value, size_t index)
     t_node *new_node;
 
     new_node=(t_node *)malloc(sizeof(t_node));
+    if (new_node == NULL)
+        return (NULL);
     new_node->value=value;
     new_node->prev=NULL;
     new_node->next=NULL;
@@ -65,11 +82,19 @@ t_node *create_stack(int array[])
 
     i=1;
     head=create_node(array[0], 0);
+    if (head == NULL)
+        return (NULL);
     tail=head;
     while(array[i] != '\0')
     {
         t_node *new_node;
         new_node=create_node(array[i], i);
+        if (new_node == NULL)
+        {
+            head->prev=tail;
+            tail->next=head;
+            return (head);
+        }
         tail->next=new_node;
         new_node->prev=tail;
         tail=new_node;
@@ -77,7 +102,7 @@ t_node *create_stack(int array[])
     }
     head->prev=tail;
     tail->next=head;
-    return(head);
+    return (head);
 }
 
 int *sort_array(int *array)
@@ -157,4 +182,16 @@ bool    check_duplicate(int *array)
         i++;
     }
     return(check_result);
+}
+
+size_t  get_array_size(int *array)
+{
+    size_t  i;
+    size_t  array_size;
+
+    i = 0;
+    array_size = 0;
+    while (array[i++] != '\0')
+        array_size++;
+    return (array_size);
 }
