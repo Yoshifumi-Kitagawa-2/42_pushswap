@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 19:47:41 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:52:04 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ int *set_array(int argc, char *argv[])
     }
     return (array);
 }
-
