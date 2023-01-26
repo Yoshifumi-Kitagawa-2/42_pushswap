@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/26 21:31:20 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/26 22:03:13 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ bool  check_str(const char *str)
 int n_atoi(const char *str, int flag)
 {
 	long long int	n;
-
+	
+	n = 0;
 	while (ft_isdigit(*str) == 1)
 	{
 		n = n * 10 + (*str - '0');
