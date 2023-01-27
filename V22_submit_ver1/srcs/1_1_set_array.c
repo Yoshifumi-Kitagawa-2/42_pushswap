@@ -6,7 +6,7 @@
 /*   By: yokitaga <yokitaga@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 20:34:53 by yokitaga          #+#    #+#             */
-/*   Updated: 2023/01/27 15:41:41 by yokitaga         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:20:05 by yokitaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ bool	check_str(const char *str)
 
 	check_result = true;
 	i = 0;
+	if (str[i] == '\0')
+	{
+		check_result = false;
+		return (check_result);
+	}
 	while (str[i] != '\0')
 	{
 		if (ft_isdigit(str[i]) == 0)
