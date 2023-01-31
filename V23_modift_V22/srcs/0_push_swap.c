@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
+__attribute__((destructor))
+static void destructor(){
+	system("leaks push_swap");
+}
+
 int	main(int argc, char *argv[])
 {
 	t_data	*data;

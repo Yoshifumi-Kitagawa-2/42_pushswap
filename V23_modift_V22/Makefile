@@ -57,3 +57,7 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+.PHONYはmakefileで使われるターゲットを指定する際に用いられるものです。
+「.PHONY」ターゲットは実際には存在しないターゲットを表しますが、makeはそれを実行しようとすると
+「all」「clean」「fclean」「re」などの指定されたターゲットを実行します。
+これにより、同じ名前のファイルが存在しても、意図したターゲットが実行されるようになります。
